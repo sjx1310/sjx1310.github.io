@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sjx1310.github.io/p/first/</loc>
+    <lastmod>2020-10-13T20:23:41+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sjx1310.github.io/post/</loc>
     <lastmod>2020-10-13T20:23:41+08:00</lastmod>
   </url>
@@ -85,26 +90,6 @@
   <url>
     <loc>https://sjx1310.github.io/categories/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sjx1310.github.io/p/placeholder-text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sjx1310.github.io/tags/tag-with-whitespaces/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sjx1310.github.io/categories/test-with-whitespaces/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sjx1310.github.io/tags/text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>

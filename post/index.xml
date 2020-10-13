@@ -8,6 +8,41 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Oct 2020 20:23:41 +0800</lastBuildDate><atom:link href="https://sjx1310.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>First</title>
+      <link>https://sjx1310.github.io/p/first/</link>
+      <pubDate>Tue, 13 Oct 2020 20:23:41 +0800</pubDate>
+      
+      <guid>https://sjx1310.github.io/p/first/</guid>
+      <description>网络应用的体系结构  客户机/服务器结构 C/S 点对点结构 P2P 混合结构  C/S结构 服务器：
+ 对外提供服务，7*24 拥有永久性访问的地址/域名 利用大量服务器，实现可扩展性  客户机：
+ 与服务器通信，使用服务器提供的服务 间歇性接入网络 可能使用动态的IP地址  P2P结构 没有永远在线的服务器。
+任意端系统 节点之间可以直接通信
+节点间歇性接入网络，可以改变IP地址。
+优点：高度可伸缩。
+缺点：难以管理。
+混合结构 例：Napster
+文件传输使用P2P结构，文件搜索采用C/S结构。
+网络应用间的通信 网络应用的基础是进程间的通信。
+同一主机上运行的进程之间由操作系统提供进程间通信机制。
+不同主机上运行的进程间以消息交换进行通信。
+客户机进程：发起通信请求的进程。
+服务器进程：等待通信请求的进程。
+套接字：socket 进程间通信，利用socket发送、接收消息。
+socket可以看作操作系统提供的API。
+进程寻址 不同主机间进程通信，每个进程必须拥有标识符。
+IP地址提供了寻址主机的方式。但同一主机上可能同时有多个进程，IP地址不足以定位进程。
+主机上每个需要通信的进程分配一个端口号，用来定位进程。
+ 进程标识符=IP地址+端口号。
+ 应用层协议 网络应用需要遵循应用层协议。
+公开协议：由RFC定义，允许互相操作。包括HTTP SMTP……
+内容：
+ 消息的类型：请求消息、响应消息 消息的语法格式：消息中的字段，每个字段的描述 字段的语义：字段中信息的含义 规则：进程何时发送、如何发送消息  网络应用需求 数据丢失/可靠性
+某些网络应用可以容忍一定的数据丢失，有些则不能。
+时间延迟
+带宽</description>
+    </item>
+    
+    <item>
       <title>计网-应用层</title>
       <link>https://sjx1310.github.io/p/%E8%AE%A1%E7%BD%91-%E5%BA%94%E7%94%A8%E5%B1%82/</link>
       <pubDate>Tue, 13 Oct 2020 20:23:41 +0800</pubDate>
@@ -65,15 +100,6 @@ IP地址提供了寻址主机的方式。但同一主机上可能同时有多个
       
       <guid>https://sjx1310.github.io/p/markdown-syntax-guide/</guid>
       <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Placeholder Text</title>
-      <link>https://sjx1310.github.io/p/placeholder-text/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://sjx1310.github.io/p/placeholder-text/</guid>
-      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
     </item>
     
     <item>
