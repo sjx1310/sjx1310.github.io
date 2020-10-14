@@ -6,40 +6,35 @@
     <description>Recent content in Posts on Welcome to my blog!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Oct 2020 20:23:41 +0800</lastBuildDate><atom:link href="https://sjx1310.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://sjx1310.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First</title>
-      <link>https://sjx1310.github.io/p/first/</link>
-      <pubDate>Tue, 13 Oct 2020 20:23:41 +0800</pubDate>
+      <title>Hugo静态博客的搭建</title>
+      <link>https://sjx1310.github.io/p/hugo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://sjx1310.github.io/p/first/</guid>
-      <description>网络应用的体系结构  客户机/服务器结构 C/S 点对点结构 P2P 混合结构  C/S结构 服务器：
- 对外提供服务，7*24 拥有永久性访问的地址/域名 利用大量服务器，实现可扩展性  客户机：
- 与服务器通信，使用服务器提供的服务 间歇性接入网络 可能使用动态的IP地址  P2P结构 没有永远在线的服务器。
-任意端系统 节点之间可以直接通信
-节点间歇性接入网络，可以改变IP地址。
-优点：高度可伸缩。
-缺点：难以管理。
-混合结构 例：Napster
-文件传输使用P2P结构，文件搜索采用C/S结构。
-网络应用间的通信 网络应用的基础是进程间的通信。
-同一主机上运行的进程之间由操作系统提供进程间通信机制。
-不同主机上运行的进程间以消息交换进行通信。
-客户机进程：发起通信请求的进程。
-服务器进程：等待通信请求的进程。
-套接字：socket 进程间通信，利用socket发送、接收消息。
-socket可以看作操作系统提供的API。
-进程寻址 不同主机间进程通信，每个进程必须拥有标识符。
-IP地址提供了寻址主机的方式。但同一主机上可能同时有多个进程，IP地址不足以定位进程。
-主机上每个需要通信的进程分配一个端口号，用来定位进程。
- 进程标识符=IP地址+端口号。
- 应用层协议 网络应用需要遵循应用层协议。
-公开协议：由RFC定义，允许互相操作。包括HTTP SMTP……
-内容：
- 消息的类型：请求消息、响应消息 消息的语法格式：消息中的字段，每个字段的描述 字段的语义：字段中信息的含义 规则：进程何时发送、如何发送消息  网络应用需求 数据丢失/可靠性
-某些网络应用可以容忍一定的数据丢失，有些则不能。
-时间延迟
-带宽</description>
+      <guid>https://sjx1310.github.io/p/hugo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/</guid>
+      <description>Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。
+ 昨天花了很多时间用Hugo与GitHub Page连接，搭建起了一个博客。
+与以前搭建Hexo相比，Hugo对搭建环境的要求确实较低，过程也比较简单快速。
+Hugo的安装 Hugo的安装相当简单。只需要下载exe文件，并将exe文件所在的目录添加到系统环境变量即可。如图：
+添加好环境变量后，在命令行输入
+hugo version 即可查看安装信息。
+如图。
+网站的搭建 安装成功后，进入任意目录，在cmd输入
+hugo new site /directory 即可在你进入cmd的目录下创建一个directory目录，用来存放静态网站的源文件。目录的结构如下：
+ ▸ archetypes/ ▸ content/ ▸ layouts/ ▸ static/ config.toml 其中 config.toml文件中是页面的配置信息，决定了页面的外观。
+安装主题 静态网站的文件已经生成了，但是现在生成的网站会是空白，因此需要安装主题。
+Hugo在 https://themes.gohugo.io/ 提供了许多的主题 （虽然暂时还没有Hexo多）。可以浏览该网站，选择自己喜欢的主题。
+安装主题可以直接进入主题页面下载压缩包，也可以在控制台使用 git clone命令下载。主题存放在directory/themes/  目录下。
+主题安装好后，进入主题文件夹中的exampleSite 目录，复制里面的文件，覆盖粘贴到根目录，这样在生成网站时就有了模板。
+生成网站 运行
+hugo server 命令，在浏览器地址栏输入 localhost:1313可以预览生成的网站。
+部署到GitHubPage 首先，在GitHub上需要有一个名为 username.io 的仓库（username代表GitHub用户名，必须完全相同）。这样才能获得一个域名为username.github.io的GitHubPage。
+打开根目录的config.toml文件，进行如下修改：
+baseUrl=&amp;#34;https://github.com/username/username.io/&amp;#34; 注意最后的反斜杠一定要加上!
+之后执行命令
+hugo --baseUrl=&amp;quot;http://username.github.io/&amp;quot; 注意，以上命令并不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 draft=true 再重新生成。
+如果一切顺利，所有静态页面都会生成到 public 目录，现在需要将pubilc目录里所有文件 push 到刚创建的Repository的 master 分支。</description>
     </item>
     
     <item>

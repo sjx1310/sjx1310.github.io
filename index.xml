@@ -6,71 +6,71 @@
         <description>Recent content on Welcome to my blog!</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 13 Oct 2020 20:23:41 +0800</lastBuildDate><atom:link href="https://sjx1310.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>First</title>
-        <link>https://sjx1310.github.io/p/first/</link>
-        <pubDate>Tue, 13 Oct 2020 20:23:41 +0800</pubDate>
+        <lastBuildDate>Wed, 14 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://sjx1310.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo静态博客的搭建</title>
+        <link>https://sjx1310.github.io/p/hugo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/</link>
+        <pubDate>Wed, 14 Oct 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://sjx1310.github.io/p/first/</guid>
-        <description>&lt;h3 id=&#34;网络应用的体系结构&#34;&gt;网络应用的体系结构&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;客户机/服务器结构 C/S&lt;/li&gt;
-&lt;li&gt;点对点结构 P2P&lt;/li&gt;
-&lt;li&gt;混合结构&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;cs结构&#34;&gt;C/S结构&lt;/h4&gt;
-&lt;p&gt;服务器：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;对外提供服务，7*24&lt;/li&gt;
-&lt;li&gt;拥有永久性访问的地址/域名&lt;/li&gt;
-&lt;li&gt;利用大量服务器，实现可扩展性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;客户机：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;与服务器通信，使用服务器提供的服务&lt;/li&gt;
-&lt;li&gt;间歇性接入网络&lt;/li&gt;
-&lt;li&gt;可能使用动态的IP地址&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;p2p结构&#34;&gt;P2P结构&lt;/h4&gt;
-&lt;p&gt;没有永远在线的服务器。&lt;/p&gt;
-&lt;p&gt;任意端系统 节点之间可以直接通信&lt;/p&gt;
-&lt;p&gt;节点间歇性接入网络，可以改变IP地址。&lt;/p&gt;
-&lt;p&gt;优点：高度可伸缩。&lt;/p&gt;
-&lt;p&gt;缺点：难以管理。&lt;/p&gt;
-&lt;h4 id=&#34;混合结构&#34;&gt;混合结构&lt;/h4&gt;
-&lt;p&gt;例：Napster&lt;/p&gt;
-&lt;p&gt;文件传输使用P2P结构，文件搜索采用C/S结构。&lt;/p&gt;
-&lt;h3 id=&#34;网络应用间的通信&#34;&gt;网络应用间的通信&lt;/h3&gt;
-&lt;p&gt;网络应用的基础是进程间的通信。&lt;/p&gt;
-&lt;p&gt;同一主机上运行的进程之间由操作系统提供进程间通信机制。&lt;/p&gt;
-&lt;p&gt;不同主机上运行的进程间以消息交换进行通信。&lt;/p&gt;
-&lt;p&gt;客户机进程：发起通信请求的进程。&lt;/p&gt;
-&lt;p&gt;服务器进程：等待通信请求的进程。&lt;/p&gt;
-&lt;h4 id=&#34;套接字socket&#34;&gt;套接字：socket&lt;/h4&gt;
-&lt;p&gt;进程间通信，利用socket发送、接收消息。&lt;/p&gt;
-&lt;p&gt;socket可以看作操作系统提供的API。&lt;/p&gt;
-&lt;h4 id=&#34;进程寻址&#34;&gt;进程寻址&lt;/h4&gt;
-&lt;p&gt;不同主机间进程通信，每个进程必须拥有标识符。&lt;/p&gt;
-&lt;p&gt;IP地址提供了寻址主机的方式。但同一主机上可能同时有多个进程，IP地址不足以定位进程。&lt;/p&gt;
-&lt;p&gt;主机上每个需要通信的进程分配一个端口号，用来定位进程。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;进程标识符=IP地址+端口号。&lt;/p&gt;
+        <guid>https://sjx1310.github.io/p/hugo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&#34;应用层协议&#34;&gt;应用层协议&lt;/h4&gt;
-&lt;p&gt;网络应用需要遵循应用层协议。&lt;/p&gt;
-&lt;p&gt;公开协议：由RFC定义，允许互相操作。包括HTTP SMTP……&lt;/p&gt;
-&lt;p&gt;内容：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;消息的类型：请求消息、响应消息&lt;/li&gt;
-&lt;li&gt;消息的语法格式：消息中的字段，每个字段的描述&lt;/li&gt;
-&lt;li&gt;字段的语义：字段中信息的含义&lt;/li&gt;
-&lt;li&gt;规则：进程何时发送、如何发送消息&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;网络应用需求&#34;&gt;网络应用需求&lt;/h3&gt;
-&lt;p&gt;数据丢失/可靠性&lt;/p&gt;
-&lt;p&gt;某些网络应用可以容忍一定的数据丢失，有些则不能。&lt;/p&gt;
-&lt;p&gt;时间延迟&lt;/p&gt;
-&lt;p&gt;带宽&lt;/p&gt;
+&lt;p&gt;昨天花了很多时间用Hugo与GitHub Page连接，搭建起了一个博客。&lt;/p&gt;
+&lt;p&gt;与以前搭建Hexo相比，Hugo对搭建环境的要求确实较低，过程也比较简单快速。&lt;/p&gt;
+&lt;h3 id=&#34;hugo的安装&#34;&gt;Hugo的安装&lt;/h3&gt;
+&lt;p&gt;Hugo的安装相当简单。只需要下载exe文件，并将exe文件所在的目录添加到系统环境变量即可。如图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e6%88%91%e7%9a%84%e5%9d%9a%e6%9e%9c%e4%ba%91%5c%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%5cimages%5cQQ%e6%88%aa%e5%9b%be20201014162048.jpg&#34; alt=&#34;QQ截图20201014162048&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;添加好环境变量后，在命令行输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;hugo version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即可查看安装信息。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;D:%5c%e6%88%91%e7%9a%84%e5%9d%9a%e6%9e%9c%e4%ba%91%5c%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0%5cimages%5cQQ%e6%88%aa%e5%9b%be20201014162403.jpg&#34; alt=&#34;QQ截图20201014162403&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;如图。&lt;/p&gt;
+&lt;h3 id=&#34;网站的搭建&#34;&gt;网站的搭建&lt;/h3&gt;
+&lt;p&gt;安装成功后，进入任意目录，在cmd输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo new site /directory
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;即可在你进入cmd的目录下创建一个directory目录，用来存放静态网站的源文件。目录的结构如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  ▸ archetypes/
+  ▸ content/
+  ▸ layouts/
+  ▸ static/
+    config.toml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中 config.toml文件中是页面的配置信息，决定了页面的外观。&lt;/p&gt;
+&lt;h3 id=&#34;安装主题&#34;&gt;安装主题&lt;/h3&gt;
+&lt;p&gt;静态网站的文件已经生成了，但是现在生成的网站会是空白，因此需要安装主题。&lt;/p&gt;
+&lt;p&gt;Hugo在 &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;https://themes.gohugo.io/&lt;/a&gt; 提供了许多的主题 （虽然暂时还没有Hexo多）。可以浏览该网站，选择自己喜欢的主题。&lt;/p&gt;
+&lt;p&gt;安装主题可以直接进入主题页面下载压缩包，也可以在控制台使用&lt;code&gt; git clone&lt;/code&gt;命令下载。主题存放在&lt;code&gt;directory/themes/ &lt;/code&gt; 目录下。&lt;/p&gt;
+&lt;p&gt;主题安装好后，进入主题文件夹中的&lt;code&gt;exampleSite &lt;/code&gt;目录，复制里面的文件，覆盖粘贴到根目录，这样在生成网站时就有了模板。&lt;/p&gt;
+&lt;h3 id=&#34;生成网站&#34;&gt;生成网站&lt;/h3&gt;
+&lt;p&gt;运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;命令，在浏览器地址栏输入&lt;code&gt; localhost:1313&lt;/code&gt;可以预览生成的网站。&lt;/p&gt;
+&lt;h3 id=&#34;部署到githubpage&#34;&gt;部署到GitHubPage&lt;/h3&gt;
+&lt;p&gt;首先，在GitHub上需要有一个名为&lt;code&gt; username.io&lt;/code&gt; 的仓库（&lt;strong&gt;username&lt;/strong&gt;代表GitHub用户名，必须完全相同）。这样才能获得一个域名为&lt;code&gt;username.github.io&lt;/code&gt;的GitHubPage。&lt;/p&gt;
+&lt;p&gt;打开根目录的&lt;code&gt;config.toml&lt;/code&gt;文件，进行如下修改：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;nx&#34;&gt;baseUrl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://github.com/username/username.io/&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意最后的反斜杠一定要加上!&lt;/p&gt;
+&lt;p&gt;之后执行命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo --baseUrl=&amp;quot;http://username.github.io/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意，以上命令并不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 &lt;code&gt;draft=true&lt;/code&gt; 再重新生成。&lt;/p&gt;
+&lt;p&gt;如果一切顺利，所有静态页面都会生成到 &lt;code&gt;public&lt;/code&gt; 目录，现在需要将pubilc目录里所有文件 &lt;code&gt;push&lt;/code&gt; 到刚创建的Repository的 &lt;code&gt;master&lt;/code&gt; 分支。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; public
+$ git init
+$ git remote add origin https://github.com/coderzh/coderzh.github.io.git
+$ git add -A
+$ git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;first commit&amp;#34;&lt;/span&gt;
+$ git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一次执行过程会需要输入GitHub的账号和密码，进行身份验证。&lt;/p&gt;
+&lt;h3 id=&#34;书写文章更新&#34;&gt;书写文章、更新&lt;/h3&gt;
+&lt;p&gt;搭建好网站只是第一步。现在问题来了：应该怎么更新博文呢？静态网站发表文章远不如在线博客方便，而是需要本地写好后再生成。并&lt;code&gt;push&lt;/code&gt;到GitHubPage的仓库里，才能实现博文更新。&lt;/p&gt;
+&lt;p&gt;博文默认存放在&lt;code&gt;\content\post&lt;/code&gt;目录下。可以直接在该目录创建md文件，也可以在根目录执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo new post/article.md
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样生成的markdown文件会自动起一个标题，并生成发表时间。&lt;/p&gt;
+&lt;p&gt;写好markdown文件后，便可以发表了。如上面所述，先在本地生成。现在需要提交到线上：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; public
+git add -A
+git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;xxxx&amp;#34;&lt;/span&gt;
+git push -f origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;稍等一下再进入网站，应该就可以看到写好的博文辣！&lt;/p&gt;
 </description>
         </item>
         <item>
