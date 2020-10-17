@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下。
+题目描述  n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
+上图为 8 皇后问题的一种解法。
+给定一个整数 n，返回 n 皇后不同的解决方案的数量。
+ 示例：
+输入: 4 输出: 2 解释: 4 皇后问题存在如下两个不同的解法。 [ [&amp;quot;.Q..&amp;quot;,
+&amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;..Q.&amp;quot;],
+[&amp;rdquo;..Q.&amp;quot;,
+&amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;.Q..&amp;quot;] ]
+来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/n-queens-ii。
+思路 N皇后是一个很经典的问题了。解决这个问题的方法就是回溯法。
+解决一个回溯问题，实际上就是一个决策树的遍历过程。只需要思考 3 个问题：
+ 路径：也就是已经做出的选择。 选择列表：也就是你当前可以做的选择。 结束条件：也就是到达决策树底层，无法再做选择的条件。  result = [] func backtrack(路径, 选择列表): if 满足结束条件: result.add(路径) return for 选择 in 选择列表: 做选择 backtrack(路径, 选择列表) 撤销选择 具体到这个问题中：每次摆放一个皇后就是在做出选择。而每个皇后之间都需要满足彼此不能攻击到的条件，这样就限制了摆放好一个皇后之后，下一个的位置。
+因此，需要写一个方法来判断两个皇后的位置是否冲突。皇后的攻击范围为上下左右以及对角线。而两个皇后必定不会出现在同一行，所以左右的条件可以直接排除。
+接下来判断是否在上下或者对角线，很容易想到利用坐标表示皇后的位置，只需要比较坐标就可以判断是否冲突。
+棋盘可以用二维数组 int[][] board来表示吗，这样board[i][j]就可以表示皇后的坐标。'><title>LeetCode Hard难度第一题——N皇后问题</title>
+    
+    <link rel='canonical' href='https://sjx1310.github.io/p/leetcode-hard%E9%9A%BE%E5%BA%A6%E7%AC%AC%E4%B8%80%E9%A2%98n%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='LeetCode Hard难度第一题——N皇后问题'>
+<meta property='og:description' content='开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下。
+题目描述  n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
+上图为 8 皇后问题的一种解法。
+给定一个整数 n，返回 n 皇后不同的解决方案的数量。
+ 示例：
+输入: 4 输出: 2 解释: 4 皇后问题存在如下两个不同的解法。 [ [&amp;quot;.Q..&amp;quot;,
+&amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;..Q.&amp;quot;],
+[&amp;rdquo;..Q.&amp;quot;,
+&amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;.Q..&amp;quot;] ]
+来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/n-queens-ii。
+思路 N皇后是一个很经典的问题了。解决这个问题的方法就是回溯法。
+解决一个回溯问题，实际上就是一个决策树的遍历过程。只需要思考 3 个问题：
+ 路径：也就是已经做出的选择。 选择列表：也就是你当前可以做的选择。 结束条件：也就是到达决策树底层，无法再做选择的条件。  result = [] func backtrack(路径, 选择列表): if 满足结束条件: result.add(路径) return for 选择 in 选择列表: 做选择 backtrack(路径, 选择列表) 撤销选择 具体到这个问题中：每次摆放一个皇后就是在做出选择。而每个皇后之间都需要满足彼此不能攻击到的条件，这样就限制了摆放好一个皇后之后，下一个的位置。
+因此，需要写一个方法来判断两个皇后的位置是否冲突。皇后的攻击范围为上下左右以及对角线。而两个皇后必定不会出现在同一行，所以左右的条件可以直接排除。
+接下来判断是否在上下或者对角线，很容易想到利用坐标表示皇后的位置，只需要比较坐标就可以判断是否冲突。
+棋盘可以用二维数组 int[][] board来表示吗，这样board[i][j]就可以表示皇后的坐标。'>
+<meta property='og:url' content='https://sjx1310.github.io/p/leetcode-hard%E9%9A%BE%E5%BA%A6%E7%AC%AC%E4%B8%80%E9%A2%98n%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/'>
+<meta property='og:site_name' content='Welcome to my blog!'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-10-17T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-10-17T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="LeetCode Hard难度第一题——N皇后问题">
+<meta name="twitter:description" content="开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下。
+题目描述  n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
+上图为 8 皇后问题的一种解法。
+给定一个整数 n，返回 n 皇后不同的解决方案的数量。
+ 示例：
+输入: 4 输出: 2 解释: 4 皇后问题存在如下两个不同的解法。 [ [&amp;quot;.Q..&amp;quot;,
+&amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;..Q.&amp;quot;],
+[&amp;rdquo;..Q.&amp;quot;,
+&amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;.Q..&amp;quot;] ]
+来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/n-queens-ii。
+思路 N皇后是一个很经典的问题了。解决这个问题的方法就是回溯法。
+解决一个回溯问题，实际上就是一个决策树的遍历过程。只需要思考 3 个问题：
+ 路径：也就是已经做出的选择。 选择列表：也就是你当前可以做的选择。 结束条件：也就是到达决策树底层，无法再做选择的条件。  result = [] func backtrack(路径, 选择列表): if 满足结束条件: result.add(路径) return for 选择 in 选择列表: 做选择 backtrack(路径, 选择列表) 撤销选择 具体到这个问题中：每次摆放一个皇后就是在做出选择。而每个皇后之间都需要满足彼此不能攻击到的条件，这样就限制了摆放好一个皇后之后，下一个的位置。
+因此，需要写一个方法来判断两个皇后的位置是否冲突。皇后的攻击范围为上下左右以及对角线。而两个皇后必定不会出现在同一行，所以左右的条件可以直接排除。
+接下来判断是否在上下或者对角线，很容易想到利用坐标表示皇后的位置，只需要比较坐标就可以判断是否冲突。
+棋盘可以用二维数组 int[][] board来表示吗，这样board[i][j]就可以表示皇后的坐标。"></head><body class="">
+        <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+
+                
+                    
+                    <img src="/img/avatar_hu7dbb7e177609845d8f85f98ba83315b0_60845_300x300_resize_q75_box.jpg" width="300"
+                        height="300" class="site-logo" loading="lazy" alt="Avatar">
+                
+
+                <span class="emoji">🐱</span>
+            </figure>
+        
+        <h1 class="site-name"><a href="https://sjx1310.github.io/">Welcome to my blog!</a></h1>
+        <h2 class="site-description">如今你仍是我的光</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='https://sjx1310.github.io/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://sjx1310.github.io/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://sjx1310.github.io/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+    </ol>
+</aside>
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://sjx1310.github.io/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="https://sjx1310.github.io/p/leetcode-hard%E9%9A%BE%E5%BA%A6%E7%AC%AC%E4%B8%80%E9%A2%98n%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/">LeetCode Hard难度第一题——N皇后问题</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Oct 17, 2020</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <p>开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下。</p>
+<h3 id="题目描述">题目描述</h3>
+<blockquote>
+<p>n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。</p>
+<p><img src="https://github.com/sjx1310/sjx1310.github.io/blob/master/img/8-queens.png" alt=""  /></p>
+<p>上图为 8 皇后问题的一种解法。</p>
+<p>给定一个整数 n，返回 n 皇后不同的解决方案的数量。</p>
+</blockquote>
+<p>示例：</p>
+<p>输入: 4
+输出: 2
+解释: 4 皇后问题存在如下两个不同的解法。
+[
+[&quot;.Q..&quot;,<br>
+&ldquo;&hellip;Q&rdquo;,
+&ldquo;Q&hellip;&rdquo;,
+&ldquo;..Q.&quot;],</p>
+<p>[&rdquo;..Q.&quot;,<br>
+&ldquo;Q&hellip;&rdquo;,
+&ldquo;&hellip;Q&rdquo;,
+&ldquo;.Q..&quot;]
+]</p>
+<p>来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/n-queens-ii。</p>
+<h3 id="思路">思路</h3>
+<p>N皇后是一个很经典的问题了。解决这个问题的方法就是回溯法。</p>
+<p><strong>解决一个回溯问题，实际上就是一个决策树的遍历过程</strong>。只需要思考 3 个问题：</p>
+<ol>
+<li>路径：也就是已经做出的选择。</li>
+<li>选择列表：也就是你当前可以做的选择。</li>
+<li>结束条件：也就是到达决策树底层，无法再做选择的条件。</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">result</span> <span class="p">=</span> <span class="p">[]</span>
+<span class="kd">func</span> <span class="nf">backtrack</span><span class="p">(</span><span class="nx">路径</span><span class="p">,</span> <span class="nx">选择列表</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nx">满足结束条件</span><span class="p">:</span>
+        <span class="nx">result</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">路径</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">for</span> <span class="nx">选择</span> <span class="nx">in</span> <span class="nx">选择列表</span><span class="p">:</span>
+        <span class="nx">做选择</span>
+        <span class="nf">backtrack</span><span class="p">(</span><span class="nx">路径</span><span class="p">,</span> <span class="nx">选择列表</span><span class="p">)</span>
+        <span class="nx">撤销选择</span>
+</code></pre></div><p>具体到这个问题中：每次摆放一个皇后就是在做出选择。而每个皇后之间都需要满足彼此不能攻击到的条件，这样就限制了摆放好一个皇后之后，下一个的位置。</p>
+<p>因此，需要写一个方法来判断两个皇后的位置是否冲突。皇后的攻击范围为上下左右以及对角线。而两个皇后必定不会出现在同一行，所以左右的条件可以直接排除。</p>
+<p>接下来判断是否在上下或者对角线，很容易想到利用坐标表示皇后的位置，只需要比较坐标就可以判断是否冲突。</p>
+<p>棋盘可以用二维数组 <code>int[][] board</code>来表示吗，这样<code>board[i][j]</code>就可以表示皇后的坐标。</p>
+<p>但通过进一步观察可以发现，其实可以把<code>board</code>压缩成一维数组<code>int[] board</code>，这样用数组自身的下标加上在下标处的值也可以表示位置：令<code>board[i]=j</code>，即可表示皇后的坐标为<code>(i,j)</code>。</p>
+<h3 id="代码">代码</h3>
+<p>这样，判断某个位置是否有效的方法如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">oolean</span> <span class="nf">isValid</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">board</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index</span><span class="o">){</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">index</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="c1">//此时正准备放第index个皇后，遍历之前所有已经放下的，判断是否冲突
+</span><span class="c1"></span>            <span class="k">if</span><span class="o">(</span><span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">board</span><span class="o">[</span><span class="n">index</span><span class="o">]){</span>
+                <span class="c1">//表示该位置有皇后位于同一列
+</span><span class="c1"></span>                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">-</span> <span class="n">board</span><span class="o">[</span><span class="n">index</span><span class="o">])==</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">index</span> <span class="o">-</span> <span class="n">i</span><span class="o">)){</span>
+                <span class="c1">//表示该位置有皇后位于对角线上
+</span><span class="c1"></span>                <span class="k">return</span>  <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div><p>有了这个方法，就可以写回溯的主方法了。</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">backtrack</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">board</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">n</span><span class="o">){</span>
+            <span class="c1">//如果当前已经循环到第n个，说明棋盘已经摆满了，这样就多了一种有效的解。
+</span><span class="c1"></span>            <span class="n">res</span><span class="o">++;</span>
+            <span class="k">return</span> <span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="n">board</span><span class="o">[</span><span class="n">index</span><span class="o">]=</span><span class="n">i</span><span class="o">;</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">isValid</span><span class="o">(</span><span class="n">board</span><span class="o">,</span> <span class="n">index</span><span class="o">)){</span>
+                <span class="n">backtrack</span><span class="o">(</span><span class="n">board</span><span class="o">,</span> <span class="n">index</span><span class="o">+</span><span class="n">1</span><span class="o">,</span><span class="n">n</span><span class="o">);</span>
+                <span class="c1">//递归调用，表示当前位置确实有效，这样就可以放下一排的皇后
+</span><span class="c1"></span>            <span class="o">}</span>
+        <span class="o">}</span>
+    	<span class="c1">//如果当前排没有位置有效，说明之前的位置存在错误，这里方法会返回到上一层，也就是摆放上一排的时候。
+</span><span class="c1"></span>    <span class="o">}</span>
+</code></pre></div><p>汇总如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">totalNQueens</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">board</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
+        <span class="n">backtrack</span><span class="o">(</span><span class="n">board</span><span class="o">,</span><span class="n">0</span><span class="o">,</span><span class="n">n</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kt">void</span> <span class="nf">backtrack</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">board</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">n</span><span class="o">){</span>
+            <span class="n">res</span><span class="o">++;</span>
+            <span class="k">return</span> <span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="n">board</span><span class="o">[</span><span class="n">index</span><span class="o">]=</span><span class="n">i</span><span class="o">;</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">isValid</span><span class="o">(</span><span class="n">board</span><span class="o">,</span> <span class="n">index</span><span class="o">)){</span>
+                <span class="n">backtrack</span><span class="o">(</span><span class="n">board</span><span class="o">,</span> <span class="n">index</span><span class="o">+</span><span class="n">1</span><span class="o">,</span><span class="n">n</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="kt">boolean</span> <span class="nf">isValid</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">board</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index</span><span class="o">){</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">index</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="n">board</span><span class="o">[</span><span class="n">index</span><span class="o">]||</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">-</span> <span class="n">board</span><span class="o">[</span><span class="n">index</span><span class="o">])==</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">index</span> <span class="o">-</span> <span class="n">i</span><span class="o">)){</span>
+                <span class="k">return</span>  <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">&copy; 2020 Welcome to my blog!</section>
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="1.0.5">Stack</a></b> designed by
+        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" style="display:none">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<link rel="stylesheet" href="/css/highlight/light.min.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/css/highlight/dark.min.css" media="(prefers-color-scheme: dark)">
+
+    </body>
+</html>
