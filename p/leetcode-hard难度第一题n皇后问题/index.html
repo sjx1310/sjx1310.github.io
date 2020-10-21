@@ -1,62 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
     <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下。
-题目描述  n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
-上图为 8 皇后问题的一种解法。
-给定一个整数 n，返回 n 皇后不同的解决方案的数量。
- 示例：
-输入: 4 输出: 2 解释: 4 皇后问题存在如下两个不同的解法。 [ [&amp;quot;.Q..&amp;quot;,
-&amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;..Q.&amp;quot;],
-[&amp;rdquo;..Q.&amp;quot;,
-&amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;.Q..&amp;quot;] ]
-来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/n-queens-ii。
-思路 N皇后是一个很经典的问题了。解决这个问题的方法就是回溯法。
-解决一个回溯问题，实际上就是一个决策树的遍历过程。只需要思考 3 个问题：
- 路径：也就是已经做出的选择。 选择列表：也就是你当前可以做的选择。 结束条件：也就是到达决策树底层，无法再做选择的条件。  result = [] func backtrack(路径, 选择列表): if 满足结束条件: result.add(路径) return for 选择 in 选择列表: 做选择 backtrack(路径, 选择列表) 撤销选择 具体到这个问题中：每次摆放一个皇后就是在做出选择。而每个皇后之间都需要满足彼此不能攻击到的条件，这样就限制了摆放好一个皇后之后，下一个的位置。
-因此，需要写一个方法来判断两个皇后的位置是否冲突。皇后的攻击范围为上下左右以及对角线。而两个皇后必定不会出现在同一行，所以左右的条件可以直接排除。
-接下来判断是否在上下或者对角线，很容易想到利用坐标表示皇后的位置，只需要比较坐标就可以判断是否冲突。
-棋盘可以用二维数组 int[][] board来表示吗，这样board[i][j]就可以表示皇后的坐标。'><title>LeetCode Hard难度第一题——N皇后问题</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下'><title>LeetCode Hard难度第一题——N皇后问题</title>
     
     <link rel='canonical' href='https://sjx1310.github.io/p/leetcode-hard%E9%9A%BE%E5%BA%A6%E7%AC%AC%E4%B8%80%E9%A2%98n%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='LeetCode Hard难度第一题——N皇后问题'>
-<meta property='og:description' content='开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下。
-题目描述  n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
-上图为 8 皇后问题的一种解法。
-给定一个整数 n，返回 n 皇后不同的解决方案的数量。
- 示例：
-输入: 4 输出: 2 解释: 4 皇后问题存在如下两个不同的解法。 [ [&amp;quot;.Q..&amp;quot;,
-&amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;..Q.&amp;quot;],
-[&amp;rdquo;..Q.&amp;quot;,
-&amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;.Q..&amp;quot;] ]
-来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/n-queens-ii。
-思路 N皇后是一个很经典的问题了。解决这个问题的方法就是回溯法。
-解决一个回溯问题，实际上就是一个决策树的遍历过程。只需要思考 3 个问题：
- 路径：也就是已经做出的选择。 选择列表：也就是你当前可以做的选择。 结束条件：也就是到达决策树底层，无法再做选择的条件。  result = [] func backtrack(路径, 选择列表): if 满足结束条件: result.add(路径) return for 选择 in 选择列表: 做选择 backtrack(路径, 选择列表) 撤销选择 具体到这个问题中：每次摆放一个皇后就是在做出选择。而每个皇后之间都需要满足彼此不能攻击到的条件，这样就限制了摆放好一个皇后之后，下一个的位置。
-因此，需要写一个方法来判断两个皇后的位置是否冲突。皇后的攻击范围为上下左右以及对角线。而两个皇后必定不会出现在同一行，所以左右的条件可以直接排除。
-接下来判断是否在上下或者对角线，很容易想到利用坐标表示皇后的位置，只需要比较坐标就可以判断是否冲突。
-棋盘可以用二维数组 int[][] board来表示吗，这样board[i][j]就可以表示皇后的坐标。'>
+<meta property='og:description' content='开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下'>
 <meta property='og:url' content='https://sjx1310.github.io/p/leetcode-hard%E9%9A%BE%E5%BA%A6%E7%AC%AC%E4%B8%80%E9%A2%98n%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/'>
-<meta property='og:site_name' content='Welcome to my blog!'>
+<meta property='og:site_name' content='Welcome to Dolphin Hotel!'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-10-17T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-10-17T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="LeetCode Hard难度第一题——N皇后问题">
-<meta name="twitter:description" content="开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下。
-题目描述  n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
-上图为 8 皇后问题的一种解法。
-给定一个整数 n，返回 n 皇后不同的解决方案的数量。
- 示例：
-输入: 4 输出: 2 解释: 4 皇后问题存在如下两个不同的解法。 [ [&amp;quot;.Q..&amp;quot;,
-&amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;..Q.&amp;quot;],
-[&amp;rdquo;..Q.&amp;quot;,
-&amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;.Q..&amp;quot;] ]
-来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/n-queens-ii。
-思路 N皇后是一个很经典的问题了。解决这个问题的方法就是回溯法。
-解决一个回溯问题，实际上就是一个决策树的遍历过程。只需要思考 3 个问题：
- 路径：也就是已经做出的选择。 选择列表：也就是你当前可以做的选择。 结束条件：也就是到达决策树底层，无法再做选择的条件。  result = [] func backtrack(路径, 选择列表): if 满足结束条件: result.add(路径) return for 选择 in 选择列表: 做选择 backtrack(路径, 选择列表) 撤销选择 具体到这个问题中：每次摆放一个皇后就是在做出选择。而每个皇后之间都需要满足彼此不能攻击到的条件，这样就限制了摆放好一个皇后之后，下一个的位置。
-因此，需要写一个方法来判断两个皇后的位置是否冲突。皇后的攻击范围为上下左右以及对角线。而两个皇后必定不会出现在同一行，所以左右的条件可以直接排除。
-接下来判断是否在上下或者对角线，很容易想到利用坐标表示皇后的位置，只需要比较坐标就可以判断是否冲突。
-棋盘可以用二维数组 int[][] board来表示吗，这样board[i][j]就可以表示皇后的坐标。"></head><body class="">
+<meta name="twitter:description" content="开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下"></head><body class="">
         <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
             <aside class="sidebar left-sidebar sticky">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
@@ -76,10 +31,10 @@
                         height="300" class="site-logo" loading="lazy" alt="Avatar">
                 
 
-                <span class="emoji">🐱</span>
+                <span class="emoji"></span>
             </figure>
         
-        <h1 class="site-name"><a href="https://sjx1310.github.io/">Welcome to my blog!</a></h1>
+        <h1 class="site-name"><a href="https://sjx1310.github.io/">Welcome to Dolphin Hotel!</a></h1>
         <h2 class="site-description">如今你仍是我的光</h2>
     </header>
 
@@ -168,6 +123,10 @@
         <a href="https://sjx1310.github.io/p/leetcode-hard%E9%9A%BE%E5%BA%A6%E7%AC%AC%E4%B8%80%E9%A2%98n%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/">LeetCode Hard难度第一题——N皇后问题</a>
     </h2>
 
+    
+    <h3 class="article-subtitle">
+        开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下
+    </h3>
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -182,30 +141,19 @@
 </header>
 
     <section class="article-content">
-    <p>开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下。</p>
-<h3 id="题目描述">题目描述</h3>
+    <h3 id="题目描述">题目描述</h3>
 <blockquote>
 <p>n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。</p>
-<p><img src="https://github.com/sjx1310/sjx1310.github.io/blob/master/img/8-queens.png" alt=""  /></p>
+<p><img src="https://github.com/sjx1310/sjx1310.github.io/blob/master/img/8-queens.png" alt="s"  /></p>
 <p>上图为 8 皇后问题的一种解法。</p>
 <p>给定一个整数 n，返回 n 皇后不同的解决方案的数量。</p>
-</blockquote>
 <p>示例：</p>
 <p>输入: 4
 输出: 2
-解释: 4 皇后问题存在如下两个不同的解法。
-[
-[&quot;.Q..&quot;,<br>
-&ldquo;&hellip;Q&rdquo;,
-&ldquo;Q&hellip;&rdquo;,
-&ldquo;..Q.&quot;],</p>
-<p>[&rdquo;..Q.&quot;,<br>
-&ldquo;Q&hellip;&rdquo;,
-&ldquo;&hellip;Q&rdquo;,
-&ldquo;.Q..&quot;]
-]</p>
+解释: 4 皇后问题存在两个不同的解法。</p>
 <p>来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/n-queens-ii。</p>
+</blockquote>
 <h3 id="思路">思路</h3>
 <p>N皇后是一个很经典的问题了。解决这个问题的方法就是回溯法。</p>
 <p><strong>解决一个回溯问题，实际上就是一个决策树的遍历过程</strong>。只需要思考 3 个问题：</p>
@@ -231,7 +179,7 @@
 <p>但通过进一步观察可以发现，其实可以把<code>board</code>压缩成一维数组<code>int[] board</code>，这样用数组自身的下标加上在下标处的值也可以表示位置：令<code>board[i]=j</code>，即可表示皇后的坐标为<code>(i,j)</code>。</p>
 <h3 id="代码">代码</h3>
 <p>这样，判断某个位置是否有效的方法如下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="n">oolean</span> <span class="nf">isValid</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">board</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index</span><span class="o">){</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">boolean</span> <span class="nf">isValid</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">board</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index</span><span class="o">){</span>
 
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">index</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
             <span class="c1">//此时正准备放第index个皇后，遍历之前所有已经放下的，判断是否冲突
@@ -359,7 +307,7 @@
     
 
     <footer class="site-footer">
-    <section class="copyright">&copy; 2020 Welcome to my blog!</section>
+    <section class="copyright">&copy; 2020 Welcome to Dolphin Hotel!</section>
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="1.0.5">Stack</a></b> designed by

@@ -1,34 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Welcome to my blog!</title>
+    <title>Posts on Welcome to Dolphin Hotel!</title>
     <link>https://sjx1310.github.io/post/</link>
-    <description>Recent content in Posts on Welcome to my blog!</description>
+    <description>Recent content in Posts on Welcome to Dolphin Hotel!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://sjx1310.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://sjx1310.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安娜-卡列尼娜</title>
+      <link>https://sjx1310.github.io/p/%E5%AE%89%E5%A8%9C-%E5%8D%A1%E5%88%97%E5%B0%BC%E5%A8%9C/</link>
+      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://sjx1310.github.io/p/%E5%AE%89%E5%A8%9C-%E5%8D%A1%E5%88%97%E5%B0%BC%E5%A8%9C/</guid>
+      <description> 这种画十字的习惯动作，在她心里唤起了一系列少女时代和童年时代的回忆，周围笼罩着的一片黑暗突然打破了，生命带着它种种灿烂欢乐的往事刹那间又呈现在她面前，但她的目光没有离开第二节车厢滚近拢来的车轮。就在前后车轮之间的中心对准她的一瞬间，她丢下红色手提包，头缩在肩膀里，两手着地扑到车厢下面，微微动了动，仿佛立刻想站起来，但又扑通一声跪了下去。就在这一刹那，她对自己的行动大吃一惊。“我这是在哪里？我这是在做什么？为了什么呀？”她想站起来，闪开身子，可是一个冷酷无情的庞然大物撞到她的脑袋上，从她背上轧过。“上帝呀，饶恕我的一切吧！”她说，觉得无力挣扎。
+那支她曾经用来照着阅读那本充满忧虑、欺诈、悲哀和罪恶之书的蜡烛，闪出空前未有的光辉，把原来笼罩在黑暗中的一切都给她照个透亮，接着烛光发出轻微的哔剥声，昏暗下去，终于永远熄灭了。
+ </description>
+    </item>
+    
     <item>
       <title>LeetCode Hard难度第一题——N皇后问题</title>
       <link>https://sjx1310.github.io/p/leetcode-hard%E9%9A%BE%E5%BA%A6%E7%AC%AC%E4%B8%80%E9%A2%98n%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/</link>
       <pubDate>Sat, 17 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://sjx1310.github.io/p/leetcode-hard%E9%9A%BE%E5%BA%A6%E7%AC%AC%E4%B8%80%E9%A2%98n%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/</guid>
-      <description>开始刷LeetCode一个多月了，今天完成了第一道难度为Hard的题目，也是总共第60题。特此纪念一下。
-题目描述  n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
+      <description>题目描述  n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。
 上图为 8 皇后问题的一种解法。
 给定一个整数 n，返回 n 皇后不同的解决方案的数量。
- 示例：
-输入: 4 输出: 2 解释: 4 皇后问题存在如下两个不同的解法。 [ [&amp;quot;.Q..&amp;quot;,
-&amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;..Q.&amp;quot;],
-[&amp;rdquo;..Q.&amp;quot;,
-&amp;ldquo;Q&amp;hellip;&amp;rdquo;, &amp;ldquo;&amp;hellip;Q&amp;rdquo;, &amp;ldquo;.Q..&amp;quot;] ]
+示例：
+输入: 4 输出: 2 解释: 4 皇后问题存在两个不同的解法。
 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/n-queens-ii。
-思路 N皇后是一个很经典的问题了。解决这个问题的方法就是回溯法。
+ 思路 N皇后是一个很经典的问题了。解决这个问题的方法就是回溯法。
 解决一个回溯问题，实际上就是一个决策树的遍历过程。只需要思考 3 个问题：
  路径：也就是已经做出的选择。 选择列表：也就是你当前可以做的选择。 结束条件：也就是到达决策树底层，无法再做选择的条件。  result = [] func backtrack(路径, 选择列表): if 满足结束条件: result.add(路径) return for 选择 in 选择列表: 做选择 backtrack(路径, 选择列表) 撤销选择 具体到这个问题中：每次摆放一个皇后就是在做出选择。而每个皇后之间都需要满足彼此不能攻击到的条件，这样就限制了摆放好一个皇后之后，下一个的位置。
 因此，需要写一个方法来判断两个皇后的位置是否冲突。皇后的攻击范围为上下左右以及对角线。而两个皇后必定不会出现在同一行，所以左右的条件可以直接排除。
 接下来判断是否在上下或者对角线，很容易想到利用坐标表示皇后的位置，只需要比较坐标就可以判断是否冲突。
-棋盘可以用二维数组 int[][] board来表示吗，这样board[i][j]就可以表示皇后的坐标。</description>
+棋盘可以用二维数组 int[][] board来表示吗，这样board[i][j]就可以表示皇后的坐标。
+但通过进一步观察可以发现，其实可以把board压缩成一维数组int[] board，这样用数组自身的下标加上在下标处的值也可以表示位置：令board[i]=j，即可表示皇后的坐标为(i,j)。
+代码 这样，判断某个位置是否有效的方法如下：
+boolean isValid(int[] board, int index){ for (int i = 0; i &amp;lt; index; i++) { //此时正准备放第index个皇后，遍历之前所有已经放下的，判断是否冲突  if(board[i] == board[index]){ //表示该位置有皇后位于同一列  return false; } if(Math.</description>
     </item>
     
     <item>
