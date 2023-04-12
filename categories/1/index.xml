@@ -1,58 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on Dolphin Hotel</title>
-        <link>https://example.com/post/</link>
-        <description>Recent content in Posts on Dolphin Hotel</description>
+        <title>1 on Dolphin Hotel</title>
+        <link>https://example.com/categories/1/</link>
+        <description>Recent content in 1 on Dolphin Hotel</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 12 Apr 2023 19:04:47 +0800</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>4 12</title>
-        <link>https://example.com/p/4-12/</link>
-        <pubDate>Wed, 12 Apr 2023 19:04:47 +0800</pubDate>
-        
-        <guid>https://example.com/p/4-12/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Stream</title>
-        <link>https://example.com/p/stream/</link>
-        <pubDate>Fri, 07 Apr 2023 17:30:38 +0800</pubDate>
-        
-        <guid>https://example.com/p/stream/</guid>
-        <description>&lt;p&gt;Stream中的操作可以分为两大类：&lt;strong&gt;中间操作&lt;/strong&gt;（Intermediate operations）与&lt;strong&gt;结束操作&lt;/strong&gt;（Terminal operations）。&lt;/p&gt;
-&lt;p&gt;中间操作只是对操作进行了记录，只有结束操作才会触发实际的计算（即惰性求值），这也是Stream在迭代大集合时高效的原因之一。&lt;/p&gt;
-&lt;p&gt;中间操作又可以分为&lt;strong&gt;无状态&lt;/strong&gt;（Stateless）操作与&lt;strong&gt;有状态&lt;/strong&gt;（Stateful）操作，前者是指元素的处理不受之前元素的影响；后者是指该操作只有拿到所有元素之后才能继续下去。&lt;/p&gt;
-&lt;p&gt;结束操作又可以分为&lt;strong&gt;短路&lt;/strong&gt;（short-circuiting）与&lt;strong&gt;非短路&lt;/strong&gt;操作，前者是指遇到某些符合条件的元素就可以得到最终结果；而后者是指必须处理所有元素才能得到最终结果。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;中间操作&lt;/th&gt;
-&lt;th&gt;无状态&lt;/th&gt;
-&lt;th&gt;unorderer() filter() map()mapToInt() mapToDouble()flatMap() flatMapToLong()flatMapToDouble() peek()&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;有状态&lt;/td&gt;
-&lt;td&gt;distinct() sorted()limit() skip()&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;结束操作&lt;/td&gt;
-&lt;td&gt;非短路操作&lt;/td&gt;
-&lt;td&gt;forEach()forEachOrdered() toArray() reduce() collect()max() min() count()&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;短路操作&lt;/td&gt;
-&lt;td&gt;anyMatch() allMathch() noneMatch() findFirst() findAny()&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        </item>
-        <item>
+        <lastBuildDate>Tue, 04 Apr 2023 00:31:34 +0800</lastBuildDate><atom:link href="https://example.com/categories/1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>First</title>
         <link>https://example.com/p/first/</link>
         <pubDate>Tue, 04 Apr 2023 00:31:34 +0800</pubDate>
