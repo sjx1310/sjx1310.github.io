@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Stream中的操作可以分为两大类：中间操作（Intermediate operations）与结束操作（Terminal operations）。
-中间操作只是对操作进行了记录，只有结束操作才会触发实际的计算（即惰性求值），这也是Stream在迭代大集合时高效的原因之一。
-中间操作又可以分为无状态（Stateless）操作与有状态（Stateful）操作，前者是指元素的处理不受之前元素的影响；后者是指该操作只有拿到所有元素之后才能继续下去。
-结束操作又可以分为短路（short-circuiting）与非短路操作，前者是指遇到某些符合条件的元素就可以得到最终结果；而后者是指必须处理所有元素才能得到最终结果。
-中间操作 无状态 unorderer() filter() map()mapToInt() mapToDouble()flatMap() flatMapToLong()flatMapToDouble() peek() 有状态 distinct() sorted()limit() skip() 结束操作 非短路操作 forEach()forEachOrdered() toArray() reduce() collect()max() min() count() 短路操作 anyMatch() allMathch() noneMatch() findFirst() findAny() '>
-<title>Stream</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='我一个后端，怎么就做上前端了呢？
+安装nvm nvm 是管理node版本的工具，可以通过命令行方便地切换使用的node版本。
+例：
+$ nvm use 16 Now using node v16.9.1 (npm v7.21.1) $ node -v v16.9.1 $ nvm use 14 Now using node v14.18.0 (npm v6.14.15) $ node -v v14.18.0 $ nvm install 12 Now using node v12.22.6 (npm v6.14.5) $ node -v v12.22.6 使用homebrew 运行命令：
+brew install nvm 配置nvm：如果不存在，运行以下命令创建nvm的工作目录：
+mkdir ~/.nvm 在zsh配置文件加入以下的内容：
+export NVM_DIR=&amp;#34;$HOME/.nvm&amp;#34; [ -s &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; ] &amp;amp;&amp;amp; \. &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; # This loads nvm [ -s &amp;#34;/opt/homebrew/opt/nvm/etc/bash_completion.'>
+<title>前端环境搭建</title>
 
-<link rel='canonical' href='https://example.com/p/stream/'>
+<link rel='canonical' href='https://example.com/p/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
 
-<link rel="stylesheet" href="/scss/style.min.e486be0a6046655b70ff6199face650f03808c3aa28308b2e61f2f26b7dabac3.css"><meta property='og:title' content='Stream'>
-<meta property='og:description' content='Stream中的操作可以分为两大类：中间操作（Intermediate operations）与结束操作（Terminal operations）。
-中间操作只是对操作进行了记录，只有结束操作才会触发实际的计算（即惰性求值），这也是Stream在迭代大集合时高效的原因之一。
-中间操作又可以分为无状态（Stateless）操作与有状态（Stateful）操作，前者是指元素的处理不受之前元素的影响；后者是指该操作只有拿到所有元素之后才能继续下去。
-结束操作又可以分为短路（short-circuiting）与非短路操作，前者是指遇到某些符合条件的元素就可以得到最终结果；而后者是指必须处理所有元素才能得到最终结果。
-中间操作 无状态 unorderer() filter() map()mapToInt() mapToDouble()flatMap() flatMapToLong()flatMapToDouble() peek() 有状态 distinct() sorted()limit() skip() 结束操作 非短路操作 forEach()forEachOrdered() toArray() reduce() collect()max() min() count() 短路操作 anyMatch() allMathch() noneMatch() findFirst() findAny() '>
-<meta property='og:url' content='https://example.com/p/stream/'>
+<link rel="stylesheet" href="/scss/style.min.e486be0a6046655b70ff6199face650f03808c3aa28308b2e61f2f26b7dabac3.css"><meta property='og:title' content='前端环境搭建'>
+<meta property='og:description' content='我一个后端，怎么就做上前端了呢？
+安装nvm nvm 是管理node版本的工具，可以通过命令行方便地切换使用的node版本。
+例：
+$ nvm use 16 Now using node v16.9.1 (npm v7.21.1) $ node -v v16.9.1 $ nvm use 14 Now using node v14.18.0 (npm v6.14.15) $ node -v v14.18.0 $ nvm install 12 Now using node v12.22.6 (npm v6.14.5) $ node -v v12.22.6 使用homebrew 运行命令：
+brew install nvm 配置nvm：如果不存在，运行以下命令创建nvm的工作目录：
+mkdir ~/.nvm 在zsh配置文件加入以下的内容：
+export NVM_DIR=&amp;#34;$HOME/.nvm&amp;#34; [ -s &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; ] &amp;amp;&amp;amp; \. &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; # This loads nvm [ -s &amp;#34;/opt/homebrew/opt/nvm/etc/bash_completion.'>
+<meta property='og:url' content='https://example.com/p/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
 <meta property='og:site_name' content='Dolphin Hotel'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-04-07T17:30:38&#43;08:00'/><meta property='article:modified_time' content='2023-04-07T17:30:38&#43;08:00'/>
-<meta name="twitter:title" content="Stream">
-<meta name="twitter:description" content="Stream中的操作可以分为两大类：中间操作（Intermediate operations）与结束操作（Terminal operations）。
-中间操作只是对操作进行了记录，只有结束操作才会触发实际的计算（即惰性求值），这也是Stream在迭代大集合时高效的原因之一。
-中间操作又可以分为无状态（Stateless）操作与有状态（Stateful）操作，前者是指元素的处理不受之前元素的影响；后者是指该操作只有拿到所有元素之后才能继续下去。
-结束操作又可以分为短路（short-circuiting）与非短路操作，前者是指遇到某些符合条件的元素就可以得到最终结果；而后者是指必须处理所有元素才能得到最终结果。
-中间操作 无状态 unorderer() filter() map()mapToInt() mapToDouble()flatMap() flatMapToLong()flatMapToDouble() peek() 有状态 distinct() sorted()limit() skip() 结束操作 非短路操作 forEach()forEachOrdered() toArray() reduce() collect()max() min() count() 短路操作 anyMatch() allMathch() noneMatch() findFirst() findAny() ">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-04-17T13:28:25&#43;08:00'/><meta property='article:modified_time' content='2023-04-17T13:28:25&#43;08:00'/>
+<meta name="twitter:title" content="前端环境搭建">
+<meta name="twitter:description" content="我一个后端，怎么就做上前端了呢？
+安装nvm nvm 是管理node版本的工具，可以通过命令行方便地切换使用的node版本。
+例：
+$ nvm use 16 Now using node v16.9.1 (npm v7.21.1) $ node -v v16.9.1 $ nvm use 14 Now using node v14.18.0 (npm v6.14.15) $ node -v v14.18.0 $ nvm install 12 Now using node v12.22.6 (npm v6.14.5) $ node -v v12.22.6 使用homebrew 运行命令：
+brew install nvm 配置nvm：如果不存在，运行以下命令创建nvm的工作目录：
+mkdir ~/.nvm 在zsh配置文件加入以下的内容：
+export NVM_DIR=&amp;#34;$HOME/.nvm&amp;#34; [ -s &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; ] &amp;amp;&amp;amp; \. &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; # This loads nvm [ -s &amp;#34;/opt/homebrew/opt/nvm/etc/bash_completion.">
     </head>
     <body class="
     article-page
@@ -265,7 +271,45 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#安装nvm">安装nvm</a>
+      <ol>
+        <li><a href="#使用homebrew">使用homebrew</a></li>
+        <li><a href="#使用install-script">使用install script</a></li>
+        <li><a href="#验证">验证</a></li>
+      </ol>
+    </li>
+    <li><a href="#安装node">安装node</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -276,7 +320,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/stream/">Stream</a>
+            <a href="/p/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">前端环境搭建</a>
         </h2>
     
         
@@ -298,7 +342,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Apr 07, 2023</time>
+                <time class="article-time--published">Apr 17, 2023</time>
             </div>
         
 
@@ -328,37 +372,64 @@
     <section class="article-content">
     
     
-    <p>Stream中的操作可以分为两大类：<strong>中间操作</strong>（Intermediate operations）与<strong>结束操作</strong>（Terminal operations）。</p>
-<p>中间操作只是对操作进行了记录，只有结束操作才会触发实际的计算（即惰性求值），这也是Stream在迭代大集合时高效的原因之一。</p>
-<p>中间操作又可以分为<strong>无状态</strong>（Stateless）操作与<strong>有状态</strong>（Stateful）操作，前者是指元素的处理不受之前元素的影响；后者是指该操作只有拿到所有元素之后才能继续下去。</p>
-<p>结束操作又可以分为<strong>短路</strong>（short-circuiting）与<strong>非短路</strong>操作，前者是指遇到某些符合条件的元素就可以得到最终结果；而后者是指必须处理所有元素才能得到最终结果。</p>
-<div class="table-wrapper"><table>
-<thead>
-<tr>
-<th>中间操作</th>
-<th>无状态</th>
-<th>unorderer() filter() map()mapToInt() mapToDouble()flatMap() flatMapToLong()flatMapToDouble() peek()</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>有状态</td>
-<td>distinct() sorted()limit() skip()</td>
-</tr>
-<tr>
-<td>结束操作</td>
-<td>非短路操作</td>
-<td>forEach()forEachOrdered() toArray() reduce() collect()max() min() count()</td>
-</tr>
-<tr>
-<td></td>
-<td>短路操作</td>
-<td>anyMatch() allMathch() noneMatch() findFirst() findAny()</td>
-</tr>
-</tbody>
-</table></div>
-
+    <p>我一个后端，怎么就做上前端了呢？</p>
+<h2 id="安装nvm">安装nvm</h2>
+<p><code>nvm</code> 是管理node版本的工具，可以通过命令行方便地切换使用的node版本。</p>
+<p>例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nvm use <span class="m">16</span>
+</span></span><span class="line"><span class="cl">Now using node v16.9.1 <span class="o">(</span>npm v7.21.1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">$ node -v
+</span></span><span class="line"><span class="cl">v16.9.1
+</span></span><span class="line"><span class="cl">$ nvm use <span class="m">14</span>
+</span></span><span class="line"><span class="cl">Now using node v14.18.0 <span class="o">(</span>npm v6.14.15<span class="o">)</span>
+</span></span><span class="line"><span class="cl">$ node -v
+</span></span><span class="line"><span class="cl">v14.18.0
+</span></span><span class="line"><span class="cl">$ nvm install <span class="m">12</span>
+</span></span><span class="line"><span class="cl">Now using node v12.22.6 <span class="o">(</span>npm v6.14.5<span class="o">)</span>
+</span></span><span class="line"><span class="cl">$ node -v
+</span></span><span class="line"><span class="cl">v12.22.6
+</span></span></code></pre></div><h3 id="使用homebrew">使用homebrew</h3>
+<p>运行命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install nvm
+</span></span></code></pre></div><p>配置nvm：如果不存在，运行以下命令创建nvm的工作目录：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir ~/.nvm
+</span></span></code></pre></div><p>在zsh配置文件加入以下的内容：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="nb">export</span> <span class="nv">NVM_DIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.nvm&#34;</span>
+</span></span><span class="line"><span class="cl"> <span class="o">[</span> -s <span class="s2">&#34;/opt/homebrew/opt/nvm/nvm.sh&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\.</span> <span class="s2">&#34;/opt/homebrew/opt/nvm/nvm.sh&#34;</span>  <span class="c1"># This loads nvm</span>
+</span></span><span class="line"><span class="cl"> <span class="o">[</span> -s <span class="s2">&#34;/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\.</span> <span class="s2">&#34;/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm&#34;</span>  <span class="c1"># This loads nvm bash_completion</span>
+</span></span></code></pre></div><h3 id="使用install-script">使用install script</h3>
+<p>运行以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh <span class="p">|</span> bash
+</span></span></code></pre></div><h3 id="验证">验证</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm -v
+</span></span><span class="line"><span class="cl">0.39.1
+</span></span></code></pre></div><h2 id="安装node">安装node</h2>
+<p>安装完成nvm后，运行以下命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nvm install v15
+</span></span><span class="line"><span class="cl">Now using node v15.14.0 <span class="o">(</span>npm v7.7.6<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Creating default alias: default -&gt; v15 <span class="o">(</span>-&gt; v15.14.0<span class="o">)</span>
+</span></span></code></pre></div><p>查看所有版本、目前使用的版本：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">➜  ~ nvm ls
+</span></span><span class="line"><span class="cl">-&gt;     v15.14.0
+</span></span><span class="line"><span class="cl">         system
+</span></span><span class="line"><span class="cl">default -&gt; v15 <span class="o">(</span>-&gt; v15.14.0<span class="o">)</span>
+</span></span><span class="line"><span class="cl">iojs -&gt; N/A <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">unstable -&gt; N/A <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">node -&gt; stable <span class="o">(</span>-&gt; v15.14.0<span class="o">)</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">stable -&gt; 15.14 <span class="o">(</span>-&gt; v15.14.0<span class="o">)</span> <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lts/* -&gt; lts/hydrogen <span class="o">(</span>-&gt; N/A<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lts/argon -&gt; v4.9.1 <span class="o">(</span>-&gt; N/A<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lts/boron -&gt; v6.17.1 <span class="o">(</span>-&gt; N/A<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lts/carbon -&gt; v8.17.0 <span class="o">(</span>-&gt; N/A<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lts/dubnium -&gt; v10.24.1 <span class="o">(</span>-&gt; N/A<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lts/erbium -&gt; v12.22.12 <span class="o">(</span>-&gt; N/A<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lts/fermium -&gt; v14.21.3 <span class="o">(</span>-&gt; N/A<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lts/gallium -&gt; v16.20.0 <span class="o">(</span>-&gt; N/A<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lts/hydrogen -&gt; v18.16.0 <span class="o">(</span>-&gt; N/A<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">➜  ~ nvm current
+</span></span><span class="line"><span class="cl">v15.14.0
+</span></span></code></pre></div>
 </section>
 
 

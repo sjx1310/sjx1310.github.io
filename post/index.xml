@@ -6,7 +6,275 @@
         <description>Recent content in Posts on Dolphin Hotel</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Tue, 04 Apr 2023 00:31:34 +0800</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 17 Apr 2023 13:28:25 +0800</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>hugo stack主题的配置</title>
+        <link>https://example.com/p/hugo-stack%E4%B8%BB%E9%A2%98%E7%9A%84%E9%85%8D%E7%BD%AE/</link>
+        <pubDate>Mon, 17 Apr 2023 13:28:25 +0800</pubDate>
+        
+        <guid>https://example.com/p/hugo-stack%E4%B8%BB%E9%A2%98%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
+        <description>&lt;h2 id=&#34;hugo环境搭建&#34;&gt;hugo环境搭建&lt;/h2&gt;
+</description>
+        </item>
+        <item>
+        <title>前端环境搭建</title>
+        <link>https://example.com/p/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+        <pubDate>Mon, 17 Apr 2023 13:28:25 +0800</pubDate>
+        
+        <guid>https://example.com/p/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+        <description>&lt;p&gt;我一个后端，怎么就做上前端了呢？&lt;/p&gt;
+&lt;h2 id=&#34;安装nvm&#34;&gt;安装nvm&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;nvm&lt;/code&gt; 是管理node版本的工具，可以通过命令行方便地切换使用的node版本。&lt;/p&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ nvm use &lt;span class=&#34;m&#34;&gt;16&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Now using node v16.9.1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;npm v7.21.1&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ node -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;v16.9.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ nvm use &lt;span class=&#34;m&#34;&gt;14&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Now using node v14.18.0 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;npm v6.14.15&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ node -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;v14.18.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ nvm install &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Now using node v12.22.6 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;npm v6.14.5&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ node -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;v12.22.6
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;使用homebrew&#34;&gt;使用homebrew&lt;/h3&gt;
+&lt;p&gt;运行命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install nvm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;配置nvm：如果不存在，运行以下命令创建nvm的工作目录：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir ~/.nvm
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在zsh配置文件加入以下的内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;NVM_DIR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/.nvm&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -s &lt;span class=&#34;s2&#34;&gt;&amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\.&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# This loads nvm&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -s &lt;span class=&#34;s2&#34;&gt;&amp;#34;/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\.&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm&amp;#34;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# This loads nvm bash_completion&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;使用install-script&#34;&gt;使用install script&lt;/h3&gt;
+&lt;p&gt;运行以下命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;验证&#34;&gt;验证&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nvm -v
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;0.39.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;安装node&#34;&gt;安装node&lt;/h2&gt;
+&lt;p&gt;安装完成nvm后，运行以下命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nvm install v15
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Now using node v15.14.0 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;npm v7.7.6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Creating default alias: default -&amp;gt; v15 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; v15.14.0&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看所有版本、目前使用的版本：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;➜  ~ nvm ls
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-&amp;gt;     v15.14.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;         system
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;default -&amp;gt; v15 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; v15.14.0&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;iojs -&amp;gt; N/A &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;default&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;unstable -&amp;gt; N/A &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;default&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;node -&amp;gt; stable &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; v15.14.0&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;default&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;stable -&amp;gt; 15.14 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; v15.14.0&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;default&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lts/* -&amp;gt; lts/hydrogen &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; N/A&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lts/argon -&amp;gt; v4.9.1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; N/A&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lts/boron -&amp;gt; v6.17.1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; N/A&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lts/carbon -&amp;gt; v8.17.0 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; N/A&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lts/dubnium -&amp;gt; v10.24.1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; N/A&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lts/erbium -&amp;gt; v12.22.12 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; N/A&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lts/fermium -&amp;gt; v14.21.3 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; N/A&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lts/gallium -&amp;gt; v16.20.0 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; N/A&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lts/hydrogen -&amp;gt; v18.16.0 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;-&amp;gt; N/A&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;➜  ~ nvm current
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;v15.14.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>样式测试</title>
+        <link>https://example.com/p/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Wed, 12 Apr 2023 20:05:51 +0800</pubDate>
+        
+        <guid>https://example.com/p/%E6%A0%B7%E5%BC%8F%E6%B5%8B%E8%AF%95/</guid>
+        <description>&lt;h2 id=&#34;这是代码样式测试&#34;&gt;这是代码样式测试&lt;/h2&gt;
+&lt;p&gt;Java&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// 这是一段代码
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;米冲高&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;golang&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;关键年&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;这是表格样式测试&#34;&gt;这是表格样式测试&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;111&lt;/td&gt;
+&lt;td&gt;AAA&lt;/td&gt;
+&lt;td&gt;666&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;111&lt;/td&gt;
+&lt;td&gt;111&lt;/td&gt;
+&lt;td&gt;111&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;111&lt;/td&gt;
+&lt;td&gt;111&lt;/td&gt;
+&lt;td&gt;111&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;这是列表样式测试&#34;&gt;这是列表样式测试&lt;/h2&gt;
+&lt;p&gt;有序列表：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;权力的游戏&lt;/li&gt;
+&lt;li&gt;列王的纷争&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;无序列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;杭州&lt;/li&gt;
+&lt;li&gt;南京&lt;/li&gt;
+&lt;li&gt;武汉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;待办列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 战争与和平&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 魔山&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 细雪&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;这是公式样式测试&#34;&gt;这是公式样式测试&lt;/h2&gt;
+&lt;p&gt;$$
+\begin{align*}
+y = y(x,t) &amp;amp;= A e^{i\theta} \
+&amp;amp;= A (\cos \theta + i \sin \theta) \
+&amp;amp;= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \
+&amp;amp;= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \
+&amp;amp;= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \
+&amp;amp;= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)
+\end{align*}
+$$&lt;/p&gt;
+&lt;p&gt;Typora has the built-in &lt;a class=&#34;link&#34; href=&#34;https://mhchem.github.io/MathJax-mhchem/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;mhchem&lt;/a&gt; extension, which can be used to render Chemistry Expressions, you could use like this:&lt;/p&gt;
+&lt;h2 id=&#34;这是链接测试&#34;&gt;这是链接测试&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://unsplash.com/images&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;unsplash&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;这是图片测试&#34;&gt;这是图片测试&lt;/h2&gt;
+</description>
+        </item>
+        <item>
+        <title>4 12</title>
+        <link>https://example.com/p/4-12/</link>
+        <pubDate>Wed, 12 Apr 2023 19:04:47 +0800</pubDate>
+        
+        <guid>https://example.com/p/4-12/</guid>
+        <description>&lt;h3 id=&#34;part1&#34;&gt;Part1&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;忘了什么时候开始觉得讽刺
+当我不再喜欢别人夸我懂事
+什么场合说些什么话更合适
+熟练的是 点到为止&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以为飞得很稳后又坠落几次
+等到事故足够多到熬成故事
+欲言又止化作目光温柔克制
+更多的是 一笑了之&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;深夜独自 看着整座城市
+啊 万家灯火而为何我
+怅然若失&lt;/p&gt;
+&lt;p&gt;曾经的刺 已然渐渐丢失
+啊 被宠坏的孩子般哭
+真的奢侈&lt;/p&gt;
+&lt;p&gt;忘了什么时候开始加以掩饰
+感到累了忙碌起来又会没事
+周而复始总有焦虑要去收拾
+冷暖自知 若无其事&lt;/p&gt;
+&lt;p&gt;徐：
+指尖流过去的岁月稍纵即逝
+来不及珍惜怀念著懵懂无知
+直到长成了我曾讨厌的样子
+冷漠理智 日复一日&lt;/p&gt;
+&lt;p&gt;尽管如此 好想纵容一次
+啊 年过三十还爱做梦
+是否可耻&lt;/p&gt;
+&lt;p&gt;肆：
+尽管如此 想再荒唐一次
+啊 追逐月亮的大小孩
+是否可耻&lt;/p&gt;
+&lt;p&gt;肆：
+世上正襟危坐的多的是
+徐：
+禁锢著也曾不安分的脚趾
+合：
+扪心自问我是否 还能像个孩子
+冲撞打破已知
+无惧重新开始&lt;/p&gt;
+&lt;p&gt;徐：
+正因如此 请再勇敢一次
+啊 追逐月亮的大小孩
+并不可耻&lt;/p&gt;
+&lt;p&gt;肆：
+尽管如此 人生就这一次
+啊 追逐月亮的大小孩
+并不奢侈&lt;/p&gt;
+&lt;p&gt;合：
+尽管如此 感谢残酷现实
+啊 成为了这样的大人
+并不可耻
+肆：
+成为了这样的大人
+并不可耻
+徐：
+成为了这样的大人
+也依然是
+合：
+闯荡世界的大小孩
+庆幸我是
+闯荡世界吧 大小孩
+尽管如此&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>Stream</title>
+        <link>https://example.com/p/stream/</link>
+        <pubDate>Fri, 07 Apr 2023 17:30:38 +0800</pubDate>
+        
+        <guid>https://example.com/p/stream/</guid>
+        <description>&lt;p&gt;Stream中的操作可以分为两大类：&lt;strong&gt;中间操作&lt;/strong&gt;（Intermediate operations）与&lt;strong&gt;结束操作&lt;/strong&gt;（Terminal operations）。&lt;/p&gt;
+&lt;p&gt;中间操作只是对操作进行了记录，只有结束操作才会触发实际的计算（即惰性求值），这也是Stream在迭代大集合时高效的原因之一。&lt;/p&gt;
+&lt;p&gt;中间操作又可以分为&lt;strong&gt;无状态&lt;/strong&gt;（Stateless）操作与&lt;strong&gt;有状态&lt;/strong&gt;（Stateful）操作，前者是指元素的处理不受之前元素的影响；后者是指该操作只有拿到所有元素之后才能继续下去。&lt;/p&gt;
+&lt;p&gt;结束操作又可以分为&lt;strong&gt;短路&lt;/strong&gt;（short-circuiting）与&lt;strong&gt;非短路&lt;/strong&gt;操作，前者是指遇到某些符合条件的元素就可以得到最终结果；而后者是指必须处理所有元素才能得到最终结果。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;中间操作&lt;/th&gt;
+&lt;th&gt;无状态&lt;/th&gt;
+&lt;th&gt;unorderer() filter() map()mapToInt() mapToDouble()flatMap() flatMapToLong()flatMapToDouble() peek()&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;有状态&lt;/td&gt;
+&lt;td&gt;distinct() sorted()limit() skip()&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;结束操作&lt;/td&gt;
+&lt;td&gt;非短路操作&lt;/td&gt;
+&lt;td&gt;forEach()forEachOrdered() toArray() reduce() collect()max() min() count()&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;短路操作&lt;/td&gt;
+&lt;td&gt;anyMatch() allMathch() noneMatch() findFirst() findAny()&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        <item>
         <title>First</title>
         <link>https://example.com/p/first/</link>
         <pubDate>Tue, 04 Apr 2023 00:31:34 +0800</pubDate>
