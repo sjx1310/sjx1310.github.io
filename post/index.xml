@@ -6,129 +6,7 @@
         <description>Recent content in Posts on Dolphin Hotel</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 12 Apr 2023 20:05:51 +0800</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Fix</title>
-        <link>https://example.com/p/fix/</link>
-        <pubDate>Wed, 12 Apr 2023 20:05:51 +0800</pubDate>
-        
-        <guid>https://example.com/p/fix/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>4 12</title>
-        <link>https://example.com/p/4-12/</link>
-        <pubDate>Wed, 12 Apr 2023 19:04:47 +0800</pubDate>
-        
-        <guid>https://example.com/p/4-12/</guid>
-        <description>&lt;h3 id=&#34;part1&#34;&gt;Part1&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;忘了什么时候开始觉得讽刺
-当我不再喜欢别人夸我懂事
-什么场合说些什么话更合适
-熟练的是 点到为止&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;以为飞得很稳后又坠落几次
-等到事故足够多到熬成故事
-欲言又止化作目光温柔克制
-更多的是 一笑了之&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;深夜独自 看着整座城市
-啊 万家灯火而为何我
-怅然若失&lt;/p&gt;
-&lt;p&gt;曾经的刺 已然渐渐丢失
-啊 被宠坏的孩子般哭
-真的奢侈&lt;/p&gt;
-&lt;p&gt;忘了什么时候开始加以掩饰
-感到累了忙碌起来又会没事
-周而复始总有焦虑要去收拾
-冷暖自知 若无其事&lt;/p&gt;
-&lt;p&gt;徐：
-指尖流过去的岁月稍纵即逝
-来不及珍惜怀念著懵懂无知
-直到长成了我曾讨厌的样子
-冷漠理智 日复一日&lt;/p&gt;
-&lt;p&gt;尽管如此 好想纵容一次
-啊 年过三十还爱做梦
-是否可耻&lt;/p&gt;
-&lt;p&gt;肆：
-尽管如此 想再荒唐一次
-啊 追逐月亮的大小孩
-是否可耻&lt;/p&gt;
-&lt;p&gt;肆：
-世上正襟危坐的多的是
-徐：
-禁锢著也曾不安分的脚趾
-合：
-扪心自问我是否 还能像个孩子
-冲撞打破已知
-无惧重新开始&lt;/p&gt;
-&lt;p&gt;徐：
-正因如此 请再勇敢一次
-啊 追逐月亮的大小孩
-并不可耻&lt;/p&gt;
-&lt;p&gt;肆：
-尽管如此 人生就这一次
-啊 追逐月亮的大小孩
-并不奢侈&lt;/p&gt;
-&lt;p&gt;合：
-尽管如此 感谢残酷现实
-啊 成为了这样的大人
-并不可耻
-肆：
-成为了这样的大人
-并不可耻
-徐：
-成为了这样的大人
-也依然是
-合：
-闯荡世界的大小孩
-庆幸我是
-闯荡世界吧 大小孩
-尽管如此&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        </item>
-        <item>
-        <title>Stream</title>
-        <link>https://example.com/p/stream/</link>
-        <pubDate>Fri, 07 Apr 2023 17:30:38 +0800</pubDate>
-        
-        <guid>https://example.com/p/stream/</guid>
-        <description>&lt;p&gt;Stream中的操作可以分为两大类：&lt;strong&gt;中间操作&lt;/strong&gt;（Intermediate operations）与&lt;strong&gt;结束操作&lt;/strong&gt;（Terminal operations）。&lt;/p&gt;
-&lt;p&gt;中间操作只是对操作进行了记录，只有结束操作才会触发实际的计算（即惰性求值），这也是Stream在迭代大集合时高效的原因之一。&lt;/p&gt;
-&lt;p&gt;中间操作又可以分为&lt;strong&gt;无状态&lt;/strong&gt;（Stateless）操作与&lt;strong&gt;有状态&lt;/strong&gt;（Stateful）操作，前者是指元素的处理不受之前元素的影响；后者是指该操作只有拿到所有元素之后才能继续下去。&lt;/p&gt;
-&lt;p&gt;结束操作又可以分为&lt;strong&gt;短路&lt;/strong&gt;（short-circuiting）与&lt;strong&gt;非短路&lt;/strong&gt;操作，前者是指遇到某些符合条件的元素就可以得到最终结果；而后者是指必须处理所有元素才能得到最终结果。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;中间操作&lt;/th&gt;
-&lt;th&gt;无状态&lt;/th&gt;
-&lt;th&gt;unorderer() filter() map()mapToInt() mapToDouble()flatMap() flatMapToLong()flatMapToDouble() peek()&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;有状态&lt;/td&gt;
-&lt;td&gt;distinct() sorted()limit() skip()&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;结束操作&lt;/td&gt;
-&lt;td&gt;非短路操作&lt;/td&gt;
-&lt;td&gt;forEach()forEachOrdered() toArray() reduce() collect()max() min() count()&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;短路操作&lt;/td&gt;
-&lt;td&gt;anyMatch() allMathch() noneMatch() findFirst() findAny()&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        </item>
-        <item>
+        <lastBuildDate>Tue, 04 Apr 2023 00:31:34 +0800</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>First</title>
         <link>https://example.com/p/first/</link>
         <pubDate>Tue, 04 Apr 2023 00:31:34 +0800</pubDate>
@@ -145,7 +23,7 @@
 &lt;p&gt;&lt;strong&gt;老胡&lt;/strong&gt;也是经过了深思熟虑,在每个日日夜夜思考这个问题。就&lt;strong&gt;老胡&lt;/strong&gt;个人来说,&lt;strong&gt;鸟笼效应&lt;/strong&gt;对&lt;strong&gt;老胡&lt;/strong&gt;的意义, 不能不说非常重大。很多人不想看&lt;strong&gt;鸟笼效应&lt;/strong&gt;的报导，我也不忍看它，因为想象一下就感觉很难受。近来由于&lt;strong&gt;鸟笼效应&lt;/strong&gt;事件的发生，很多人都受委屈了。 &lt;strong&gt;鸟笼效应&lt;/strong&gt; ，给那些群众造成的不便可想而知。&lt;/p&gt;
 &lt;p&gt;可是，即使是这样，&lt;strong&gt;鸟笼效应&lt;/strong&gt;的出现仍然代表了一定的意义。对&lt;strong&gt;老胡&lt;/strong&gt;而言，&lt;strong&gt;鸟笼效应&lt;/strong&gt;不仅仅是一个重大的事件，更是值得思考的一件事，&lt;strong&gt;老胡&lt;/strong&gt;看，&lt;strong&gt;鸟笼效应&lt;/strong&gt;的情况引起舆论强烈不满。除了舆论本身存在一些因&lt;strong&gt;鸟笼效应&lt;/strong&gt;引起的怨气，也有其他的原因，&lt;strong&gt;老胡&lt;/strong&gt;觉得&lt;strong&gt;鸟笼效应&lt;/strong&gt;实在不应该。以世界的眼光综观&lt;strong&gt;鸟笼效应&lt;/strong&gt;的过程，不能不说，各种体制的社会看上去对阻止&lt;strong&gt;鸟笼效应&lt;/strong&gt;有着各自的软肋。在开始阶段都不够坚决，眼看着风险出现了，但都有放不下的坛坛罐罐，心存各自的侥幸，直到那头灰犀牛以意外的速度闯到眼前。对于 &lt;strong&gt;鸟笼效应&lt;/strong&gt; ，&lt;strong&gt;老胡&lt;/strong&gt;有个基本判断，公众之所以对&lt;strong&gt;鸟笼效应&lt;/strong&gt;很敏感，我认为主要是对以往情况不太满意，对&lt;strong&gt;鸟笼效应&lt;/strong&gt;问题缺少信心，所以对事件的一些细节全都朝着最不利的方向去解读了。这不禁令&lt;strong&gt;老胡&lt;/strong&gt;深思，除了有&lt;strong&gt;鸟笼效应&lt;/strong&gt;这个事实，我认为面对接下来的巨大风险，我们还要形成了这样一个信念，我看到有报道说&lt;strong&gt;鸟笼效应&lt;/strong&gt;可以这样解决，我认为这种办法值得研究参考。只要大家都诚心，问题总是能够得到解决。&lt;strong&gt;老胡&lt;/strong&gt;今天略作梳理&lt;strong&gt;鸟笼效应&lt;/strong&gt;发生的过程和原因，是为了提醒当前案例所暴露的一些缺陷和问题。&lt;strong&gt;老胡&lt;/strong&gt;从来不反对舆论场上有多元的观点发生各种碰撞，但&lt;strong&gt;老胡&lt;/strong&gt;认为&lt;strong&gt;鸟笼效应&lt;/strong&gt;的这次事件堪称是一番露怯的表演。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;鸟笼效应&lt;/strong&gt;注定会给中国人留下深刻的印象，一些人担心中国不会进行深刻的反思，我不这样看。我相信，问题相当明显，从&lt;strong&gt;鸟笼效应&lt;/strong&gt;以来，中国的反思就已经开始了。有些话并没有公开说透，但我们可以找到很多这些反思在进行中的明确证据。这，就是复杂中国的体现。&lt;/p&gt;
-&lt;h2 id=&#34;part3&#34;&gt;part3&lt;/h2&gt;
+&lt;h2 id=&#34;part3-冰雨的风暴&#34;&gt;part3 冰雨的风暴&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;凯特琳起身脱掉长袍，走上台阶，没入黑暗之中，暂时远离父亲。无边的恐怖充斥在她心底。“父亲，”她说，“父亲，我明白了。”她已不再是那个满脑子白日梦的纯洁新娘，她成了寡妇、成了叛徒、成了悲伤的母亲，但也更加懂事，对世态炎凉瞧得一清二楚。“&lt;/p&gt;
 &lt;/blockquote&gt;
