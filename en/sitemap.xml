@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://example.com/categories/</loc>
+    <lastmod>2023-04-18T13:59:07+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://example.com/zh-cn/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://example.com/ar/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://example.com/categories/"
+                />
+  </url><url>
     <loc>https://example.com/</loc>
-    <lastmod>2023-04-17T13:28:25+08:00</lastmod>
+    <lastmod>2023-04-18T13:59:07+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -20,10 +38,16 @@
                 href="https://example.com/"
                 />
   </url><url>
-    <loc>https://example.com/p/hugo-stack%E4%B8%BB%E9%A2%98%E7%9A%84%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2023-04-17T13:28:25+08:00</lastmod>
-  </url><url>
     <loc>https://example.com/post/</loc>
+    <lastmod>2023-04-18T13:59:07+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/p/react/</loc>
+    <lastmod>2023-04-18T13:59:07+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2023-04-18T13:59:07+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/p/hugo-stack%E4%B8%BB%E9%A2%98%E7%9A%84%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2023-04-17T13:28:25+08:00</lastmod>
   </url><url>
     <loc>https://example.com/p/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
@@ -69,24 +93,6 @@
   </url><url>
     <loc>https://example.com/categories/1/</loc>
     <lastmod>2023-04-04T00:31:34+08:00</lastmod>
-  </url><url>
-    <loc>https://example.com/categories/</loc>
-    <lastmod>2023-04-04T00:31:34+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://example.com/zh-cn/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://example.com/ar/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://example.com/categories/"
-                />
   </url><url>
     <loc>https://example.com/p/first/</loc>
     <lastmod>2023-04-04T00:31:34+08:00</lastmod>
