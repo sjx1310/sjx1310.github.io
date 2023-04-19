@@ -316,6 +316,7 @@ JSX 规则 1. 只能返回一个根元素 如果想要在一个组件中包含�
     </li>
     <li><a href="#响应事件">响应事件</a></li>
     <li><a href="#更新界面记录数据">更新界面、记录数据</a></li>
+    <li><a href="#组件间共享数据">组件间共享数据</a></li>
   </ol>
 </nav>
         </div>
@@ -460,29 +461,18 @@ JSX 规则 1. 只能返回一个根元素 如果想要在一个组件中包含�
 <h4 id="2-标签必须闭合">2. 标签必须闭合</h4>
 <p>JSX 要求标签必须正确闭合。像 <code>&lt;img&gt;</code> 这样的自闭合标签必须书写成 <code>&lt;img /&gt;</code>，而像 <code>&lt;li&gt;oranges</code> 这样只有开始标签的元素必须带有闭合标签，需要改为 <code>&lt;li&gt;oranges&lt;/li&gt;</code>。</p>
 <p>海蒂·拉玛的照片和代办事项的标签经修改后变为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  &lt;img 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    src=&#34;https://i.imgur.com/yXOvdOSs.jpg&#34; 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    alt=&#34;Hedy Lamarr&#34; 
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    class=&#34;photo&#34;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">   /&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  &lt;ul&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      &lt;li&gt;发明一种新式交通信号灯&lt;/li&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      &lt;li&gt;排练一个电影场景&lt;/li&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      &lt;li&gt;改进频谱技术&lt;/li&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  &lt;/ul&gt;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">&lt;/&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="p">&lt;&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">img</span> 
+</span></span><span class="line"><span class="cl">    <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://i.imgur.com/yXOvdOSs.jpg&#34;</span> 
+</span></span><span class="line"><span class="cl">    <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Hedy Lamarr&#34;</span> 
+</span></span><span class="line"><span class="cl">    <span class="na">class</span><span class="o">=</span><span class="s">&#34;photo&#34;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">发明一种新式交通信号灯</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">排练一个电影场景</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="nx">改进频谱技术</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/&gt;</span>
 </span></span></code></pre></div><h4 id="3-使用驼峰式命名法">3. 使用驼峰式命名法</h4>
 <p>JSX 最终会被转化为 JavaScript，而 JSX 中的属性也会变成 JavaScript 对象中的键值对。在你自己的组件中，经常会遇到需要用变量的方式读取这些属性的时候。但 JavaScript 对变量的命名有限制。例如，变量名称不能包含 <code>-</code> 符号或者像 <code>class</code> 这样的保留字。</p>
 <p>这就是为什么在 React 中，大部分 HTML 和 SVG 属性都用驼峰式命名法表示。例如，需要用 <code>strokeWidth</code> 代替 <code>stroke-width</code>。由于 <code>class</code> 是一个保留字，所以在 React 中需要用 <code>className</code> 来代替。这也是 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/className"  target="_blank" rel="noopener"
@@ -491,7 +481,6 @@ JSX 规则 1. 只能返回一个根元素 如果想要在一个组件中包含�
 </span></span><span class="line"><span class="cl">  <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://i.imgur.com/yXOvdOSs.jpg&#34;</span> 
 </span></span><span class="line"><span class="cl">  <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Hedy Lamarr&#34;</span> 
 </span></span><span class="line"><span class="cl"> <span class="na">className</span><span class="o">=</span><span class="s">&#34;photo&#34;</span>
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">/&gt;</span>
 </span></span></code></pre></div><h2 id="响应事件">响应事件</h2>
 <p>你可以通过在组件中声明 <strong>事件处理</strong> 函数来响应事件：</p>
@@ -512,6 +501,23 @@ JSX 规则 1. 只能返回一个根元素 如果想要在一个组件中包含�
 <h2 id="更新界面记录数据">更新界面、记录数据</h2>
 <p>组件通常需要根据交互更改屏幕上显示的内容。输入表单应该更新输入字段，单击轮播图上的“下一个”应该更改显示的图片，单击“购买”应该将商品放入购物车。</p>
 <p>组件需要“记住”某些东西：当前输入值、当前图片、购物车。在 React 中，这种组件特有的记忆被称为 <strong>state</strong>。</p>
+<p>局部变量不能达到更新效果的原因：</p>
+<ol>
+<li><strong>局部变量无法在多次渲染中持久保存。</strong> 当 React 再次渲染这个组件时，它会从头开始渲染——不会考虑之前对局部变量的任何更改。</li>
+<li><strong>更改局部变量不会触发渲染。</strong> React 没有意识到它需要使用新数据再次渲染组件。</li>
+</ol>
+<p>要使用新数据更新组件，需要做两件事：</p>
+<ol>
+<li><strong>保留</strong> 渲染之间的数据。</li>
+<li><strong>触发</strong> React 使用新数据渲染组件（重新渲染）。</li>
+</ol>
+<p><a class="link" href="https://react.docschina.org/reference/usestate"  target="_blank" rel="noopener"
+    ><code>useState</code></a> Hook 提供了这两个功能：</p>
+<ol>
+<li><strong>State 变量</strong> 用于保存渲染间的数据。</li>
+<li><strong>State setter 函数</strong> 更新变量并触发 React 再次渲染组件。</li>
+<li></li>
+</ol>
 <p>从 React 引入 <a class="link" href="https://react.docschina.org/reference/react/useState"  target="_blank" rel="noopener"
     ><code>useState</code></a>：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
@@ -521,6 +527,17 @@ JSX 规则 1. 只能返回一个根元素 如果想要在一个组件中包含�
 </span></span><span class="line"><span class="cl">  <span class="c1">// ...
 </span></span></span></code></pre></div><p>你将从 <code>useState</code> 中获得两样东西：当前的 state（<code>count</code>），以及用于更新它的函数（<code>setCount</code>）。你可以给它们起任何名字，但按照惯例，需要像这样 <code>[something, setSomething]</code> 为它们命名。</p>
 <p>第一次显示按钮时，<code>count</code> 的值为 <code>0</code>，因为你把 <code>0</code> 传给了 <code>useState()</code>。当你想改变 state 时，调用 <code>setCount()</code> 并将新的值传递给它。点击该按钮计数器将递增：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">handleClick</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">setIndex</span><span class="p">(</span><span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClick</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Next</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h2 id="组件间共享数据">组件间共享数据</h2>
+<p>参考：</p>
+<p><a class="link" href="https://react.docschina.org/learn#sharing-data-between-components"  target="_blank" rel="noopener"
+    >https://react.docschina.org/learn#sharing-data-between-components</a></p>
 
 </section>
 

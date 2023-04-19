@@ -1,36 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='我一个后端，怎么就做上前端了呢？
-安装nvm nvm 是管理node版本的工具，可以通过命令行方便地切换使用的node版本。
-例：
-$ nvm use 16 Now using node v16.9.1 (npm v7.21.1) $ node -v v16.9.1 $ nvm use 14 Now using node v14.18.0 (npm v6.14.15) $ node -v v14.18.0 $ nvm install 12 Now using node v12.22.6 (npm v6.14.5) $ node -v v12.22.6 使用homebrew 运行命令：
-brew install nvm 配置nvm：如果不存在，运行以下命令创建nvm的工作目录：
-mkdir ~/.nvm 在zsh配置文件加入以下的内容：
-export NVM_DIR=&amp;#34;$HOME/.nvm&amp;#34; [ -s &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; ] &amp;amp;&amp;amp; \. &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; # This loads nvm [ -s &amp;#34;/opt/homebrew/opt/nvm/etc/bash_completion.'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='我一个后端，怎么就做上前端了呢？'>
 <title>前端环境搭建</title>
 
 <link rel='canonical' href='https://example.com/p/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
 
 <link rel="stylesheet" href="/scss/style.min.e486be0a6046655b70ff6199face650f03808c3aa28308b2e61f2f26b7dabac3.css"><meta property='og:title' content='前端环境搭建'>
-<meta property='og:description' content='我一个后端，怎么就做上前端了呢？
-安装nvm nvm 是管理node版本的工具，可以通过命令行方便地切换使用的node版本。
-例：
-$ nvm use 16 Now using node v16.9.1 (npm v7.21.1) $ node -v v16.9.1 $ nvm use 14 Now using node v14.18.0 (npm v6.14.15) $ node -v v14.18.0 $ nvm install 12 Now using node v12.22.6 (npm v6.14.5) $ node -v v12.22.6 使用homebrew 运行命令：
-brew install nvm 配置nvm：如果不存在，运行以下命令创建nvm的工作目录：
-mkdir ~/.nvm 在zsh配置文件加入以下的内容：
-export NVM_DIR=&amp;#34;$HOME/.nvm&amp;#34; [ -s &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; ] &amp;amp;&amp;amp; \. &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; # This loads nvm [ -s &amp;#34;/opt/homebrew/opt/nvm/etc/bash_completion.'>
+<meta property='og:description' content='我一个后端，怎么就做上前端了呢？'>
 <meta property='og:url' content='https://example.com/p/%E5%89%8D%E7%AB%AF%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
 <meta property='og:site_name' content='Dolphin Hotel'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-04-17T13:28:25&#43;08:00'/><meta property='article:modified_time' content='2023-04-17T13:28:25&#43;08:00'/>
 <meta name="twitter:title" content="前端环境搭建">
-<meta name="twitter:description" content="我一个后端，怎么就做上前端了呢？
-安装nvm nvm 是管理node版本的工具，可以通过命令行方便地切换使用的node版本。
-例：
-$ nvm use 16 Now using node v16.9.1 (npm v7.21.1) $ node -v v16.9.1 $ nvm use 14 Now using node v14.18.0 (npm v6.14.15) $ node -v v14.18.0 $ nvm install 12 Now using node v12.22.6 (npm v6.14.5) $ node -v v12.22.6 使用homebrew 运行命令：
-brew install nvm 配置nvm：如果不存在，运行以下命令创建nvm的工作目录：
-mkdir ~/.nvm 在zsh配置文件加入以下的内容：
-export NVM_DIR=&amp;#34;$HOME/.nvm&amp;#34; [ -s &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; ] &amp;amp;&amp;amp; \. &amp;#34;/opt/homebrew/opt/nvm/nvm.sh&amp;#34; # This loads nvm [ -s &amp;#34;/opt/homebrew/opt/nvm/etc/bash_completion.">
+<meta name="twitter:description" content="我一个后端，怎么就做上前端了呢？">
     </head>
     <body class="
     article-page
@@ -332,6 +314,10 @@ export NVM_DIR=&amp;#34;$HOME/.nvm&amp;#34; [ -s &amp;#34;/opt/homebrew/opt/nvm/
         </h2>
     
         
+        <h3 class="article-subtitle">
+            我一个后端，怎么就做上前端了呢？
+        </h3>
+        
     </div>
 
     
@@ -380,8 +366,7 @@ export NVM_DIR=&amp;#34;$HOME/.nvm&amp;#34; [ -s &amp;#34;/opt/homebrew/opt/nvm/
     <section class="article-content">
     
     
-    <p>我一个后端，怎么就做上前端了呢？</p>
-<h2 id="安装nvm">安装nvm</h2>
+    <h2 id="安装nvm">安装nvm</h2>
 <p><code>nvm</code> 是管理node版本的工具，可以通过命令行方便地切换使用的node版本。</p>
 <p>例：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nvm use <span class="m">16</span>

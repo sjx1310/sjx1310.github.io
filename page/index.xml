@@ -24,7 +24,8 @@
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
         <guid>https://example.com/archives/</guid>
-        <description></description>
+        <description>&lt;p&gt;归归归归归归零&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>Links</title>
@@ -52,7 +53,8 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://example.com/search/</guid>
-        <description></description>
+        <description>&lt;p&gt;嗖嗖嗖嗖&lt;/p&gt;
+</description>
         </item>
         
     </channel>
