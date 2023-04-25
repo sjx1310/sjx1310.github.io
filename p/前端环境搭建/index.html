@@ -90,7 +90,7 @@
             
                 <li>
                     <a 
-                        href='https://weibo.com'
+                        href='https://weibo.com/u/5127130871'
                         target="_blank"
                         title="Weibo"
                         rel="me"
@@ -387,10 +387,14 @@
 </span></span></code></pre></div><p>配置nvm：如果不存在，运行以下命令创建nvm的工作目录：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir ~/.nvm
 </span></span></code></pre></div><p>在zsh配置文件加入以下的内容：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="nb">export</span> <span class="nv">NVM_DIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.nvm&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> vim ~/.zshrc
+</span></span><span class="line"><span class="cl"> <span class="nb">export</span> <span class="nv">NVM_DIR</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.nvm&#34;</span>
 </span></span><span class="line"><span class="cl"> <span class="o">[</span> -s <span class="s2">&#34;/opt/homebrew/opt/nvm/nvm.sh&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\.</span> <span class="s2">&#34;/opt/homebrew/opt/nvm/nvm.sh&#34;</span>  <span class="c1"># This loads nvm</span>
 </span></span><span class="line"><span class="cl"> <span class="o">[</span> -s <span class="s2">&#34;/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\.</span> <span class="s2">&#34;/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm&#34;</span>  <span class="c1"># This loads nvm bash_completion</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"> <span class="nb">source</span> ~/.zshrc
 </span></span></code></pre></div><h3 id="使用install-script">使用install script</h3>
+<p>如果你不嫌烦的话，还可以</p>
 <p>运行以下命令：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh <span class="p">|</span> bash
 </span></span></code></pre></div><h3 id="验证">验证</h3>
